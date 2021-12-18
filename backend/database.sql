@@ -2,6 +2,6 @@
 CREATE DATABASE perntodo;
 
 CREATE TABLE todo(
-todo_id UUID NOT NULL PRIMARY KEY,
+todo_id BIGSERIAL NOT NULL PRIMARY KEY,
 description VARCHAR (300)
 );
