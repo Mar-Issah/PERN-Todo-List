@@ -2,13 +2,23 @@ const router = require("express").Router();
 const pool = require("../dbConfig"); //require from the dbConfig file to use to perform SQL queries here
 
 //using express router to create various route for todo
-//---------------------get/find-------------------------
-router.route("/").get((req, res) => {});
+//---------------------get all todos-------------------------
+router.get("/", async (req, res) => {
+	//this command is to get all the todos
+	try {
+		const allTodo = await pool.query("SELECT * FROM todo");
+		res.status(200).json(allTodo);
+	} catch (err) {
+		console.log(err.message);
+	}
+});
 
 //----------------------add new-------------------------
 //async/await good from asynchronous fxn wait for the fxn  to be completed to continue the fxn
 
 //try/catch in case of error when posting
+
+//request whatever was added to the body
 router.post("/add", async (req, res) => {
 	try {
 		const { description } = req.body;
