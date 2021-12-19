@@ -11,12 +11,12 @@ const PORT = process.env.PORT || 5000;
 const todoRouter = require("./routes/todo");
 
 //middlewares
-app.use("/todo", todoRouter);
+app.use("/todos", todoRouter);
 
 app.use(cors());
-app.use(express.json());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(PORT, () => {
 	console.log(`Successfully connected on port ${PORT}`);
