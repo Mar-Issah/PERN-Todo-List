@@ -33,10 +33,18 @@ code {
 }
 
 form {
-	width: 70%;
+	width: 75%;
 	margin: 0 auto;
 }
 
+.form-control {
+	height: 50px;
+}
+.form-control:focus {
+	border-color: transparent !important;
+	outline: 0;
+	box-shadow: none !important;
+}
 .btn-primary {
 	background-color: #6200ee !important;
 	border-color: #6200ee !important;
