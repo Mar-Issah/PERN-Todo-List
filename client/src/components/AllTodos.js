@@ -6,6 +6,8 @@ import EditTodo from "./EditTodo";
 const AllTodos = () => {
 	const [todos, setTodos] = useState([]);
 	const BASE_URL = "http://localhost:5000";
+
+	//get all the todo list on page render
 	const getAllTodos = () => {
 		axios
 			.get(`${BASE_URL}/todos`)
@@ -21,9 +23,7 @@ const AllTodos = () => {
 		getAllTodos();
 	}, []);
 
-	//on click of the delete btn pass in the id which is the url param and on req.param it will retrive the id and perform the delete fx on the route
-
-	//after dleting it has been deleted from the backend and we have to refresh page to see changes, instead lets filter out the deleted item firm the array
+	//delete todo function
 	const deleteTodo = (id) => {
 		axios
 			.delete(`${BASE_URL}/todos/delete/${id}`)

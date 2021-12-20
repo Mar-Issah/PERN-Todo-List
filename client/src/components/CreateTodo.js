@@ -5,11 +5,12 @@ import AllTodos from "./AllTodos";
 
 const CreateTodo = () => {
 	const [description, setDescription] = useState("");
+
+	//on form submit, make a post requet to endpoint with the desc
 	const onSubmitForm = (e) => {
 		const BASE_URL = "http://localhost:5000";
 		e.preventDefault();
 		axios
-			//destructure the dessc else it will return null assuming it to be a const and not property
 			.post(`${BASE_URL}/todos/add`, { description })
 			.then((response) => {
 				console.log(response.data);
@@ -17,7 +18,7 @@ const CreateTodo = () => {
 			.catch((error) => {
 				console.log(error);
 			});
-		// once the data has been posted, it set the input to empty and refresh the page show the list of data in the table
+		// set desc to null and refresh to see changes
 		setDescription("");
 		window.location = "/";
 	};
