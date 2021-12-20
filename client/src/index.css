@@ -40,7 +40,8 @@ form {
 .form-control {
 	height: 50px;
 }
-.form-control:focus {
+.form-control:focus,
+.btn-primary:focus {
 	border-color: transparent !important;
 	outline: 0;
 	box-shadow: none !important;
@@ -50,5 +51,11 @@ form {
 	border-color: #6200ee !important;
 }
 .btn-primary:hover {
+	border-color: #fff !important;
+}
+
+.btn-danger:focus {
+	border-color: transparent !important;
+	box-shadow: none !important;
 	border-color: #fff !important;
 }
