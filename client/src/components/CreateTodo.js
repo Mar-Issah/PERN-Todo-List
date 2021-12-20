@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import AllTodos from "./AllTodos";
 
 const CreateTodo = () => {
 	const [description, setDescription] = useState("");
@@ -15,6 +16,9 @@ const CreateTodo = () => {
 			.catch((error) => {
 				console.log(error);
 			});
+		// once the data has been posted, it set the input to empty and refresh the page show the list of data in the table
+		setDescription("");
+		window.location = "/";
 	};
 	return (
 		<div className="p-3">
@@ -32,6 +36,7 @@ const CreateTodo = () => {
 					ADD
 				</Button>
 			</form>
+			<AllTodos />
 		</div>
 	);
 };
