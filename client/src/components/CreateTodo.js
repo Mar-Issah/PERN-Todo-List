@@ -8,7 +8,7 @@ const CreateTodo = () => {
 	const onSubmitForm = async (e) => {
 		const BASE_URL = "http://localhost:5000";
 		e.preventDefault();
-		axios
+		await axios
 			.post(`${BASE_URL}/todos/add`, description)
 			.then((response) => {
 				console.log(response.data);

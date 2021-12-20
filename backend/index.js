@@ -8,15 +8,19 @@ require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 
 //----------require routes----------------
-const todoRouter = require("./routes/todo");
 
-//middlewares
-app.use("/todos", todoRouter);
-
-app.use(cors());
+// app.use(cors());
+app.use(
+	cors({
+		origin: "*",
+	})
+);
 // app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+const todoRouter = require("./routes/todo");
+app.use("/todos", todoRouter);
 
 app.listen(PORT, () => {
 	console.log(`Successfully connected on port ${PORT}`);
