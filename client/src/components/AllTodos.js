@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import axios from "axios";
+import EditTodo from "./EditTodo";
 
 const AllTodos = () => {
 	const [todos, setTodos] = useState([]);
@@ -21,11 +22,14 @@ const AllTodos = () => {
 	}, []);
 
 	//on click of the delete btn pass in the id which is the url param and on req.param it will retrive the id and perform the delete fx on the route
+
+	//after dleting it has been deleted from the backend and we have to refresh page to see changes, instead lets filter out the deleted item firm the array
 	const deleteTodo = (id) => {
 		axios
 			.delete(`${BASE_URL}/todos/delete/${id}`)
 			.then((response) => {
 				console.log(response.data);
+				setTodos(todos.filter((todo) => todo.todo_id !== id));
 			})
 			.catch((error) => {
 				console.log(error);
@@ -46,7 +50,7 @@ const AllTodos = () => {
 						<tr key={idx}>
 							<td>{todo.description}</td>
 							<td>
-								<Button variant="primary">Edit</Button>
+								<EditTodo />
 							</td>
 							<td>
 								<Button
