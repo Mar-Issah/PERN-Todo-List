@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
 	//this command is to get all the todos. we dont have to ay returning * because the perpose of select is to return everything
 	try {
 		const allTodo = await pool.query("SELECT * FROM todo");
-		res.status(200).json(allTodo);
+		res.status(200).json(allTodo.rows);
 	} catch (err) {
 		console.log(err.message);
 	}
