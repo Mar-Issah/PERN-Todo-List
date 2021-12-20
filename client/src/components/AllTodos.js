@@ -50,7 +50,7 @@ const AllTodos = () => {
 						<tr key={idx}>
 							<td>{todo.description}</td>
 							<td>
-								<EditTodo />
+								<EditTodo todo={todo} />
 							</td>
 							<td>
 								<Button

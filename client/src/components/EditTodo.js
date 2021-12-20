@@ -1,12 +1,32 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import axios from "axios";
 
-const EditTodo = () => {
+//pass in todo to be edited as props
+const EditTodo = ({ todo }) => {
+	const [description, setDescription] = useState(todo.description);
 	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
+	//function to edit the todo. todo has already been destructured and available here
+
+	//make a put/update request with the new description. refreah to see vhanges
+	const updateTodo = (e) => {
+		const BASE_URL = "http://localhost:5000";
+		e.preventDefault();
+		axios
+			.put(`${BASE_URL}/todos/update/${todo.todo_id}`, { description })
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+
+		window.location = "/";
+	};
 	return (
 		<>
 			<Button variant="primary" onClick={handleShow}>
@@ -15,15 +35,28 @@ const EditTodo = () => {
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
-					<Modal.Title>Modal heading</Modal.Title>
+					<Modal.Title>Edit Todo</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+				<Modal.Body>
+					<input
+						type="text"
+						className="form-control"
+						placeholder="Eidt Your Todo"
+						value={description}
+						onChange={(e) => setDescription(e.target.value)}
+						autoFocus
+					/>
+				</Modal.Body>
 				<Modal.Footer>
-					<Button variant="secondary" onClick={handleClose}>
-						Close
-					</Button>
-					<Button variant="primary" onClick={handleClose}>
+					<Button variant="primary" onClick={(e) => updateTodo(e)}>
 						Save Changes
+					</Button>
+					<Button
+						variant="secondary"
+						className="btn-danger"
+						onClick={handleClose}
+					>
+						Close
 					</Button>
 				</Modal.Footer>
 			</Modal>
