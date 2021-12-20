@@ -1,23 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import axios from "axios";
 
 const AllTodos = () => {
-	const getAllTodos = async () => {
+	const [todos, setTodos] = useState([]);
+	const getAllTodos = () => {
 		const BASE_URL = "http://localhost:5000";
-		const response = await axios
+		axios
 			.get(`${BASE_URL}/todos`)
 			.then((response) => {
 				console.log(response.data);
+				setTodos(response.data);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-		console.log(response);
 	};
 	useEffect(() => {
 		getAllTodos();
-	});
+	}, []);
+
 	return (
 		<div>
 			<Table bordered hover className="mt-5">
@@ -29,11 +31,13 @@ const AllTodos = () => {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-					</tr>
+					{todos.map((todo, idx) => (
+						<tr key={idx}>
+							<td>{todo.description}</td>
+							<td>Edit</td>
+							<td>Delete</td>
+						</tr>
+					))}
 				</tbody>
 			</Table>
 		</div>

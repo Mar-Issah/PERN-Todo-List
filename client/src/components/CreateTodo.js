@@ -5,11 +5,12 @@ import AllTodos from "./AllTodos";
 
 const CreateTodo = () => {
 	const [description, setDescription] = useState("");
-	const onSubmitForm = async (e) => {
+	const onSubmitForm = (e) => {
 		const BASE_URL = "http://localhost:5000";
 		e.preventDefault();
-		await axios
-			.post(`${BASE_URL}/todos/add`, description)
+		axios
+			//destructure the dessc else it will return null assuming it to be a const and not property
+			.post(`${BASE_URL}/todos/add`, { description })
 			.then((response) => {
 				console.log(response.data);
 			})
