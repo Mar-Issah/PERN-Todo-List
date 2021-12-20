@@ -10,9 +10,7 @@ const EditTodo = ({ todo }) => {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
-	//function to edit the todo. todo has already been destructured and available here
-
-	//make a put/update request with the new description. refreah to see vhanges
+	//function to edit the todo.
 	const updateTodo = (e) => {
 		const BASE_URL = "http://localhost:5000";
 		e.preventDefault();
