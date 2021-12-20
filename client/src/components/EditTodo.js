@@ -7,7 +7,10 @@ const EditTodo = ({ todo }) => {
 	const [description, setDescription] = useState(todo.description);
 	const [show, setShow] = useState(false);
 
-	const handleClose = () => setShow(false);
+	const handleClose = () => {
+		setShow(false);
+		setDescription(todo.description);
+	};
 	const handleShow = () => setShow(true);
 
 	//function to edit the todo.
