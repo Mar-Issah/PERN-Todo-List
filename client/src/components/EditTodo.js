@@ -9,6 +9,7 @@ const EditTodo = ({ todo }) => {
 
 	const handleClose = () => {
 		setShow(false);
+		//set desc back to orignal form
 		setDescription(todo.description);
 	};
 	const handleShow = () => setShow(true);
