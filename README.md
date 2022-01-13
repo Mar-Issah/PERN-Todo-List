@@ -36,7 +36,7 @@ yarn -v
 node -v
    ```
    
-If these commands print out a version number in the terminal, you are good to go. If not, you need to go ahead and install what is missing. For the purpose of this project, I used [Node](https://nodejs.org/en/)
+If these commands print out a version number in the terminal, you are good to go. If not, you need to go ahead and install what is missing. For the purpose of this project, I used [Node](https://nodejs.org/en/).
 
 ### Installation
 
@@ -62,11 +62,11 @@ If these commands print out a version number in the terminal, you are good to go
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/awesomeFeature`)
-3. Commit your Changes (`git commit -m 'Added some awesome features'`)
-4. Push to the Branch (`git push origin feature/awesomeFeature`)
-5. Open a Pull Request
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/awesomeFeature`).
+3. Commit your Changes (`git commit -m 'Added some awesome features'`).
+4. Push to the Branch (`git push origin feature/awesomeFeature`).
+5. Open a Pull Request.
    <br>
 
 <!-- LICENSE -->
