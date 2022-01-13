@@ -40,15 +40,15 @@ If these commands print out a version number in the terminal, you are good to go
 
 ### Installation
 
-1. Clone the repo on your local machine
+1. Clone the repo on your local machine.
    ```sh
    git clone https://github.com/Mar-Issah/PERN-Todo-List.git
    ```
-2. Change directory into the new folder and type the following, this installs the required dependencies
+2. Change directory into the new folder and type the following, this installs the required dependencies.
     ```sh
     npm install
    ```
-3. To run the React project(server and client)
+3. To run the React project(server and client).
    ```sh
    npm start
    ```
