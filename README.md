@@ -1,4 +1,4 @@
-# PERN Todo-List
+# PERN Todo List
 A todo list built with Postgres, Express.js, React.js and Node.js.
 
 ## About The Project
