@@ -1,5 +1,5 @@
 # PERN Todo List
-A todo list built with PostgreSQ, Express.js, React.js and Node.js.
+A todo list built with PostgreSQL, Express.js, React.js and Node.js.
 
 ## About The Project
 This is web application allows you to create, edit and delete your todo list.
