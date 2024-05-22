@@ -8,7 +8,8 @@ const CreateTodo = () => {
 
 	//on form submit, make a post requet to endpoint with the desc
 	const onSubmitForm = (e) => {
-		const BASE_URL = "http://localhost:5000";
+		//const BASE_URL = "http://localhost:5000";
+		const BASE_URL ='https://pern-todo-list-server.vercel.app'
 		e.preventDefault();
 		axios
 			.post(`${BASE_URL}/todos/add`, { description })
