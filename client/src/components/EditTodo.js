@@ -16,7 +16,8 @@ const EditTodo = ({ todo }) => {
 
 	//function to edit the todo.
 	const updateTodo = (e) => {
-		const BASE_URL = "http://localhost:5000";
+		//const BASE_URL = "http://localhost:5000";
+		const BASE_URL ='https://pern-todo-list-server.vercel.app'
 		e.preventDefault();
 		axios
 			.put(`${BASE_URL}/todos/update/${todo.todo_id}`, { description })
