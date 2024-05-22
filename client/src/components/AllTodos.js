@@ -5,7 +5,8 @@ import EditTodo from "./EditTodo";
 
 const AllTodos = () => {
 	const [todos, setTodos] = useState([]);
-	const BASE_URL = "http://localhost:5000";
+	//const BASE_URL = "http://localhost:5000";
+	const BASE_URL ='https://pern-todo-list-server.vercel.app'
 
 	//get all the todo list on page render
 	const getAllTodos = () => {
